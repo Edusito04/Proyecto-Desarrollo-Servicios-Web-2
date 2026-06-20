@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: staybook-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: staybook_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - staybook_data:/var/lib/postgresql/data
+volumes:
+  staybook_data:
